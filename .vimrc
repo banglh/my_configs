@@ -32,6 +32,7 @@ Plugin 'gmarik/Vundle.vim'
 "
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-php/vim-php-refactoring'
+Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
 Plugin 'scrooloose/nerdtree'
@@ -56,10 +57,17 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'kylef/apiblueprint.vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'joonty/vdebug'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'flazz/vim-colorschemes'
 
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+" Plugin 'MarcWeber/vim-addon-mw-utils'
+" Plugin 'tomtom/tlib_vim'
+" Plugin 'garbas/vim-snipmate'
+
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
@@ -83,7 +91,8 @@ filetype plugin on
 " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 "
 
-colorscheme desert
+" colorscheme desert
+colorscheme harlequin
 
 syntax on
 set expandtab
@@ -96,3 +105,20 @@ let g:vim_markdown_new_list_item_indent = 2
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 let g:php_refactor_command='php ~/phars/refactor.phar'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<C-K>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsUsePythonVersion = 2
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+"Open NERDTree on console vim startup. (When set to 2, open only if directory
+"was given as startup argument).
+let g:nerdtree_tabs_open_on_console_startup = 2
+
+" Vdebug settings
+let g:vdebug_options = {}
+let g:vdebug_options["port"] = 9000

@@ -117,7 +117,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 "Open NERDTree on console vim startup. (When set to 2, open only if directory
 "was given as startup argument).
-let g:nerdtree_tabs_open_on_console_startup = 2
+let g:nerdtree_tabs_open_on_console_startup = 1
 
 " Vdebug settings
 let g:vdebug_options = {}
